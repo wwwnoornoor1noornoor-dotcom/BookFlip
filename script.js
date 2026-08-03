@@ -25,6 +25,8 @@ nextBtn.addEventListener("click", nextPage);
 
 async function loadPDF(){
 
+    alert("1");
+
     const file = fileInput.files[0];
 
     if(!file){
@@ -32,11 +34,17 @@ async function loadPDF(){
         return;
     }
 
+    alert("2");
+
     const data = await file.arrayBuffer();
+
+    alert("3");
 
     pdfDoc = await pdfjsLib.getDocument({
         data:data
     }).promise;
+
+    alert("4");
 
     totalPages = pdfDoc.numPages;
     currentPage = 1;
