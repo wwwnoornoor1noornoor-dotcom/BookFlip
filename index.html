@@ -55,6 +55,7 @@
 </body>
 </html>
 -->
+<!--
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -65,7 +66,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- PDF.js -->
+    <!-- PDF.js 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/page-flip/dist/css/page-flip.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
@@ -120,3 +121,92 @@
 
 </body>
 </html>
+-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BookFlip</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<!-- StPageFlip -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/page-flip/dist/css/page-flip.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>📚 BookFlip</h1>
+
+<p>
+حوّل ملفات PDF إلى كتاب إلكتروني يقلب صفحاته
+</p>
+
+</header>
+
+<main>
+
+<div class="container">
+
+<h2>
+
+اختر ملف PDF
+
+</h2>
+
+<input
+type="file"
+id="pdfFile"
+accept=".pdf">
+
+<button id="convertBtn">
+
+تحويل الملف
+
+</button>
+   <div id="viewer">
+
+    <div id="book"></div>
+
+</div>
+
+<div class="controls">
+
+    <button id="prevPage">
+        ◀ السابق
+    </button>
+
+    <span id="pageInfo">
+
+        الصفحة 0 / 0
+
+    </span>
+
+    <button id="nextPage">
+        التالي ▶
+    </button>
+
+</div>
+
+</div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html> 
