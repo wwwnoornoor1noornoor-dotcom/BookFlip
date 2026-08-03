@@ -60,7 +60,7 @@ prevBtn.addEventListener("click", previousPage);
 nextBtn.addEventListener("click", nextPage);
 
 async function loadPDF(){
-
+alert("تم الضغط على زر التحويل");
     const file = fileInput.files[0];
 
     if(!file){
