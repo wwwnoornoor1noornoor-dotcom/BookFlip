@@ -112,3 +112,9 @@ document.addEventListener("keydown",function(e){
     }
 
 });
+if(window.St){
+    alert("StPageFlip تم تحميلها بنجاح ✅");
+}else{
+    alert("StPageFlip لم يتم تحميلها ❌");
+}
+
