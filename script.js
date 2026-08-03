@@ -38,7 +38,7 @@ alert("تم عرض الصفحة الأولى بنجاح 🎉");
    BookFlip 2.0
    script.js
 =========================== */
-
+/*
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
@@ -80,6 +80,7 @@ alert("تم الضغط على زر التحويل");
     renderPage(currentPage);
 
 }*/
+/*
 async function loadPDF(){
 
     alert("1");
@@ -165,6 +166,127 @@ document.addEventListener("keydown",function(e){
 
     if(e.key==="ArrowRight"){
         previousPage();
+    }
+
+});*/
+
+/* ===========================
+   BookFlip 3.0
+=========================== */
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+const fileInput = document.getElementById("pdfFile");
+const convertBtn = document.getElementById("convertBtn");
+const book = document.getElementById("book");
+const pageInfo = document.getElementById("pageInfo");
+const prevBtn = document.getElementById("prevPage");
+const nextBtn = document.getElementById("nextPage");
+
+let pageFlip = null;
+let pdfDoc = null;
+
+convertBtn.addEventListener("click", loadBook);
+
+async function loadBook(){
+
+    const file = fileInput.files[0];
+
+    if(!file){
+        alert("اختر ملف PDF أولاً");
+        return;
+    }
+
+    const data = await file.arrayBuffer();
+
+    pdfDoc = await pdfjsLib.getDocument({
+        data:data
+    }).promise;
+
+    book.innerHTML = "";
+
+    const pages = [];
+
+    for(let i=1;i<=pdfDoc.numPages;i++){
+
+        const page = await pdfDoc.getPage(i);
+
+        const viewport = page.getViewport({
+            scale:1.5
+        });
+
+        const canvas = document.createElement("canvas");
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        await page.render({
+            canvasContext:canvas.getContext("2d"),
+            viewport:viewport
+        }).promise;
+
+        const wrapper = document.createElement("div");
+
+        wrapper.className = "page";
+
+        wrapper.appendChild(canvas);
+
+        book.appendChild(wrapper);
+
+        pages.push(wrapper);
+
+    }
+   
+    }
+
+    if(pageFlip){
+        pageFlip.destroy();
+    }
+
+    pageFlip = new St.PageFlip(book,{
+        width:450,
+        height:600,
+        size:"stretch",
+        minWidth:300,
+        maxWidth:1000,
+        minHeight:400,
+        maxHeight:1400,
+        showCover:false,
+        mobileScrollSupport:true
+    });
+
+    pageFlip.loadFromHTML(
+        document.querySelectorAll(".page")
+    );
+
+    pageInfo.textContent =
+        "الصفحة 1 / " + pdfDoc.numPages;
+
+    pageFlip.on("flip", function(e){
+
+        pageInfo.textContent =
+            "الصفحة " +
+            (e.data + 1) +
+            " / " +
+            pdfDoc.numPages;
+
+    });
+
+}
+
+prevBtn.addEventListener("click",function(){
+
+    if(pageFlip){
+        pageFlip.flipPrev();
+    }
+
+});
+
+nextBtn.addEventListener("click",function(){
+
+    if(pageFlip){
+        pageFlip.flipNext();
     }
 
 });
