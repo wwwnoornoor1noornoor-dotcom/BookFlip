@@ -2,7 +2,7 @@
    BookFlip 2.0
    script.js
 =========================== */
-
+alert("بدأ تنفيذ script.js");
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
