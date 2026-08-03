@@ -19,7 +19,23 @@
 </header>
 
 <div class="container">
+<h2>اختر ملف PDF</h2>
 
+<input type="file" id="pdfFile" accept=".pdf">
+
+<button onclick="convertPDF()">تحويل</button>
+
+<div id="book"></div>
+
+<div id="controls">
+    <button id="prevPage">◀ السابق</button>
+
+    <span id="pageInfo">
+        الصفحة 1 / 1
+    </span>
+
+    <button id="nextPage">التالي ▶</button>
+</div>
 <h2>حوّل ملفات PDF إلى كتاب</h2>
 
 <p>
