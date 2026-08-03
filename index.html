@@ -62,7 +62,7 @@ cursor:pointer;
 قريبًا ستتمكن من رفع ملف PDF وتحويله إلى كتاب يقلب صفحاته.
 </p>
 
-<input type="file">
+<input type="file" id="pdfFile" accept=".pdf">
 
 <br>
 
@@ -71,7 +71,14 @@ cursor:pointer;
 </div>
 <script>
 function convertPDF() {
-    alert("🎉 ممتاز! زر التحويل يعمل الآن.\n\nفي الخطوة القادمة سنجعله يفتح ملف PDF ويعرضه ككتاب.");
+    const file = document.getElementById("pdfFile").files[0];
+
+    if (!file) {
+        alert("الرجاء اختيار ملف PDF أولاً.");
+        return;
+    }
+
+    alert("تم اختيار الملف:\n\n" + file.name + "\n\nفي الخطوة القادمة سنعرضه ككتاب.");
 }
 </script>
 </body>
