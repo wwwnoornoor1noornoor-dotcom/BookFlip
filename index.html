@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -51,5 +52,67 @@
 </div>
     
 <script src="script.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookFlip</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+
+<body>
+
+<header>
+    📖 BookFlip
+</header>
+
+<div class="container">
+
+    <h2>حول ملف PDF إلى كتاب</h2>
+
+    <input
+        type="file"
+        id="pdfFile"
+        accept=".pdf">
+
+    <button id="convertBtn">
+        تحويل
+    </button>
+
+    <div id="viewer">
+
+        <canvas id="pdfCanvas"></canvas>
+
+    </div>
+
+    <div id="controls">
+
+        <button id="prevPage">
+            ◀ السابق
+        </button>
+
+        <span id="pageInfo">
+            الصفحة 1 / 1
+        </span>
+
+        <button id="nextPage">
+            التالي ▶
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
