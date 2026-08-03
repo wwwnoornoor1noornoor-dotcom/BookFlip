@@ -145,3 +145,28 @@ button{
 }
 
 }
+#viewer{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+#book{
+    width:800px;
+    max-width:100%;
+    height:600px;
+    margin:auto;
+}
+
+.page{
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.page canvas{
+    max-width:100%;
+    max-height:100%;
+}
