@@ -1,4 +1,4 @@
-/*
+
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
@@ -33,12 +33,12 @@ viewport:viewport
 
 alert("تم عرض الصفحة الأولى بنجاح 🎉");
 }
-*/
+
 /* ===========================
    BookFlip 2.0
    script.js
 =========================== */
-/*
+
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
@@ -80,7 +80,7 @@ alert("تم الضغط على زر التحويل");
     renderPage(currentPage);
 
 }*/
-/*
+
 async function loadPDF(){
 
     alert("1");
@@ -168,12 +168,13 @@ document.addEventListener("keydown",function(e){
         previousPage();
     }
 
-});*/
+});
+
 
 /* ===========================
    BookFlip 3.0
 =========================== */
-
+/*
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
@@ -289,4 +290,4 @@ nextBtn.addEventListener("click",function(){
         pageFlip.flipNext();
     }
 
-});
+});*/
