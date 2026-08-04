@@ -1,19 +1,4 @@
-/*
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-const fileInput = document.getElementById("pdfFile");
-const convertBtn = document.getElementById("convertBtn");
-const book = document.getElementById("book");
-
-convertBtn.addEventListener("click", loadPDF);
-
-async function loadPDF(){
-
-    alert("بدأ التحويل");
-
-}
-*/
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
@@ -23,7 +8,6 @@ const book = document.getElementById("book");
 
 convertBtn.addEventListener("click", loadPDF);
 async function loadPDF(){
-alert("دخلت الدالة");
     const flipBook = new St.PageFlip(
     document.getElementById("book"),
     {
@@ -41,21 +25,35 @@ alert("دخلت الدالة");
     
     }
 );
-    /*const flipBook = new St.PageFlip(
-        document.getElementById("book"),
-        {
-            width:450,
-            height:600
-        }
-    );*/
+  let data;
+
+const savedPDF = sessionStorage.getItem("bookPDF");
+
+if(savedPDF){
+
+    data = new Uint8Array(JSON.parse(savedPDF)).buffer;
+
+}else{
+
+    const file = fileInput.files[0];
+
+    if(!file){
+        alert("اختر ملف PDF أولاً");
+        return;
+    }
+
+    data = await file.arrayBuffer();
+
+}  
+  /*  
 const file = fileInput.files[0];
 
 if(!file){
     alert("اختر ملف PDF أولاً");
     return;
 }
-
-const data = await file.arrayBuffer();
+*/
+/*const data = await file.arrayBuffer();*/
 
 const pdf = await pdfjsLib.getDocument({
     data:data
