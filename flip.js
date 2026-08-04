@@ -30,6 +30,7 @@ alert("دخلت الدالة");
         width:450,
         height:600,
         size:"stretch",
+        autoSize:false,
         minWidth:315,
         maxWidth:1000,
         minHeight:420,
@@ -37,6 +38,7 @@ alert("دخلت الدالة");
         showCover:true,
         mobileScrollSupport:false,
         usePortrait:false
+    
     }
 );
     /*const flipBook = new St.PageFlip(
