@@ -97,4 +97,25 @@ flipBook.loadFromHTML(pages);
 
     
 }
+function checkOrientation(){
+
+    if(window.innerHeight > window.innerWidth){
+
+        document.getElementById("rotateMessage").style.display = "flex";
+
+        document.querySelector(".container").style.display = "none";
+
+    }else{
+
+        document.getElementById("rotateMessage").style.display = "none";
+
+        document.querySelector(".container").style.display = "block";
+
+    }
+
+}
+
+window.addEventListener("resize", checkOrientation);
+
+window.addEventListener("load", checkOrientation);
 
