@@ -48,13 +48,6 @@ async function loadPDF(){
     flipBook.loadFromHTML(pages);
 
 }
-/*async function loadPDF(){
 
-    if(typeof St === "undefined"){
-        alert("مكتبة PageFlip لم يتم تحميلها");
-        return;
-    }*/
 
-    alert("مكتبة PageFlip جاهزة ✅");
 
-}
