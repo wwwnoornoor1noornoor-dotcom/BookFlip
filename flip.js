@@ -25,12 +25,27 @@ convertBtn.addEventListener("click", loadPDF);
 async function loadPDF(){
 alert("دخلت الدالة");
     const flipBook = new St.PageFlip(
+    document.getElementById("book"),
+    {
+        width:450,
+        height:600,
+        size:"stretch",
+        minWidth:315,
+        maxWidth:1000,
+        minHeight:420,
+        maxHeight:1350,
+        showCover:true,
+        mobileScrollSupport:false,
+        usePortrait:false
+    }
+);
+    /*const flipBook = new St.PageFlip(
         document.getElementById("book"),
         {
             width:450,
             height:600
         }
-    );
+    );*/
 const file = fileInput.files[0];
 
 if(!file){
