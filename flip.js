@@ -45,6 +45,23 @@ const pdf = await pdfjsLib.getDocument({
 }).promise;
 
 alert("عدد صفحات الملف: " + pdf.numPages);
+const pages = [];
 
+for(let i = 0; i < pdf.numPages; i++){
+
+    const page = document.createElement("div");
+
+    page.className = "page";
+
+    page.innerHTML = "الصفحة " + (i + 1);
+
+    pages.push(page);
+
+}
+
+flipBook.loadFromHTML(pages);
+
+
+    
 }
 
