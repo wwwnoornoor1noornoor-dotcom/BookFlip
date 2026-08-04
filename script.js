@@ -53,7 +53,7 @@ sessionStorage.setItem(
     currentPage = 1;
 
     renderPage(currentPage);
-
+window.location.href = "flip.html";
 }
 /*
 async function renderPage(pageNumber){
