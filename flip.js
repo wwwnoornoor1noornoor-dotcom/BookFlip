@@ -23,7 +23,7 @@ const book = document.getElementById("book");
 
 convertBtn.addEventListener("click", loadPDF);
 async function loadPDF(){
-
+alert("دخلت الدالة");
     const flipBook = new St.PageFlip(
         document.getElementById("book"),
         {
