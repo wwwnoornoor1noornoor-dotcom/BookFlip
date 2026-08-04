@@ -12,14 +12,14 @@ let totalPages = 0;
 
 const fileInput = document.getElementById("pdfFile");
 const convertBtn = document.getElementById("convertBtn");
-const canvas = document.getElementById("pdfCanvas");
+/*const canvas = document.getElementById("pdfCanvas");
 const ctx = canvas.getContext("2d");
 
 const prevBtn = document.getElementById("prevPage");
 const nextBtn = document.getElementById("nextPage");
 const pageInfo = document.getElementById("pageInfo");
 const book = document.getElementById("book");
-convertBtn.addEventListener("click", loadPDF);
+*/convertBtn.addEventListener("click", loadPDF);
 prevBtn.addEventListener("click", previousPage);
 nextBtn.addEventListener("click", nextPage);
 
