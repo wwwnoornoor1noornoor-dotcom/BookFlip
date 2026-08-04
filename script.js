@@ -43,7 +43,7 @@ sessionStorage.setItem(
 );
     alert("3");
 
-    pdfDoc = await pdfjsLib.getDocument({
+  /*  pdfDoc = await pdfjsLib.getDocument({
         data:data
     }).promise;
 
@@ -52,7 +52,7 @@ sessionStorage.setItem(
     totalPages = pdfDoc.numPages;
     currentPage = 1;
 
-    renderPage(currentPage);
+    renderPage(currentPage);*/
 window.location.href = "flip.html";
 }
 /*
