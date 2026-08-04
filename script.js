@@ -37,7 +37,10 @@ async function loadPDF(){
     alert("2");
 
     const data = await file.arrayBuffer();
-
+sessionStorage.setItem(
+    "bookPDF",
+    JSON.stringify(Array.from(new Uint8Array(data)))
+);
     alert("3");
 
     pdfDoc = await pdfjsLib.getDocument({
