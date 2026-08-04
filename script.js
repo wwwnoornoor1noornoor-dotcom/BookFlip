@@ -2,7 +2,7 @@
    BookFlip 2.0
    script.js
 =========================== */
-alert("بدأ تنفيذ script.js");
+//alert("بدأ تنفيذ script.js");
 pdfjsLib.GlobalWorkerOptions.workerSrc =
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
@@ -37,12 +37,14 @@ async function loadPDF(){
     alert("2");
 
     const data = await file.arrayBuffer();
-sessionStorage.setItem(
+   alert("3");
+window.location.href = "flip.html";
+/*sessionStorage.setItem(
     "bookPDF",
     JSON.stringify(Array.from(new Uint8Array(data)))
-);
-    alert("3");
-window.location.href = "flip.html";
+);*/
+  //  alert("3");
+//window.location.href = "flip.html";
 }
   /*  pdfDoc = await pdfjsLib.getDocument({
         data:data
