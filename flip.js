@@ -46,5 +46,5 @@ const pdf = await pdfjsLib.getDocument({
 
 alert("عدد صفحات الملف: " + pdf.numPages);
 
-
+}
 
