@@ -31,23 +31,20 @@ async function loadPDF(){
             height:600
         }
     );
+const file = fileInput.files[0];
 
-    const pages = [];
-
-    for(let i=1;i<=6;i++){
-
-        const div = document.createElement("div");
-
-        div.innerHTML =
-        "<h2 style='text-align:center;margin-top:250px;'>الصفحة "+i+"</h2>";
-
-        pages.push(div);
-
-    }
-
-    flipBook.loadFromHTML(pages);
-
+if(!file){
+    alert("اختر ملف PDF أولاً");
+    return;
 }
+
+const data = await file.arrayBuffer();
+
+const pdf = await pdfjsLib.getDocument({
+    data:data
+}).promise;
+
+alert("عدد صفحات الملف: " + pdf.numPages);
 
 
 
