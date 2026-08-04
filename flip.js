@@ -53,7 +53,23 @@ for(let i = 0; i < pdf.numPages; i++){
 
     page.className = "page";
 
-    page.innerHTML = "الصفحة " + (i + 1);
+    const canvas = document.createElement("canvas");
+
+page.appendChild(canvas);
+
+const pdfPage = await pdf.getPage(i + 1);
+
+const viewport = pdfPage.getViewport({
+    scale:1
+});
+
+canvas.width = viewport.width;
+canvas.height = viewport.height;
+
+await pdfPage.render({
+    canvasContext: canvas.getContext("2d"),
+    viewport: viewport
+}).promise;
 
     pages.push(page);
 
