@@ -42,7 +42,8 @@ sessionStorage.setItem(
     JSON.stringify(Array.from(new Uint8Array(data)))
 );
     alert("3");
-
+window.location.href = "flip.html";
+}
   /*  pdfDoc = await pdfjsLib.getDocument({
         data:data
     }).promise;
@@ -53,8 +54,7 @@ sessionStorage.setItem(
     currentPage = 1;
 
     renderPage(currentPage);*/
-window.location.href = "flip.html";
-}
+
 /*
 async function renderPage(pageNumber){
 
