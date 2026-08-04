@@ -52,7 +52,7 @@ async function loadPDF(){
     renderPage(currentPage);
 
 }
-
+/*
 async function renderPage(pageNumber){
 
     const page = await pdfDoc.getPage(pageNumber);
@@ -111,7 +111,7 @@ document.addEventListener("keydown",function(e){
         previousPage();
     }
 
-});
+});*/
 if(window.St){
     alert("StPageFlip تم تحميلها بنجاح ✅");
 }else{
